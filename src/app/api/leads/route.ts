@@ -1,6 +1,8 @@
 import { NextResponse } from "next/server";
 import { PrismaClient } from "@prisma/client";
 
+export const dynamic = 'force-dynamic';
+
 // Use a global prisma instance to prevent multiple connections in dev
 const globalForPrisma = globalThis as unknown as { prisma: PrismaClient };
 const prisma = globalForPrisma.prisma || new PrismaClient();
